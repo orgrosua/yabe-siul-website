@@ -1,0 +1,6 @@
+.svg-inline--fa.paragraph {
+    display: var(--fa-display, inline-block) !important;
+    height: 1em !important;
+    overflow: visible !important;
+    vertical-align: -.125em !important;
+}

@@ -1,0 +1,73 @@
+---
+import type { Props } from "@astrojs/starlight/props";
+import { logos } from 'virtual:starlight/user-images'
+import config from 'virtual:starlight/user-config'
+import { formatPath } from '../../../node_modules/@astrojs/starlight/utils/format-path';
+
+const href = formatPath(Astro.props.locale || '/') + 'docs/' as string;
+
+---
+
+<a href="/" class="site-title sl-flex home fg:white!@dark fg:dark!@light gap:8">
+	{
+		config.logo && logos.dark && (
+			<>
+				<img
+					class:list={{ 'light:sl-hidden': !('src' in config.logo) }}
+					alt={config.logo.alt}
+					src={logos.dark.src}
+					width={logos.dark.width}
+					height={logos.dark.height}
+				/>
+				{/* Show light alternate if a user configure both light and dark logos. */}
+				{!('src' in config.logo) && (
+					<img
+						class="dark:sl-hidden"
+						alt={config.logo.alt}
+						src={logos.light?.src}
+						width={logos.light?.width}
+						height={logos.light?.height}
+					/>
+				)}
+			</>
+		)
+	}
+	<span class:list={{ 'sr-only': config.logo?.replacesTitle }} class="transform:translateY(-2):hover@sm">
+		{config.title}
+	</span>
+</a>
+
+<span class="site-title sl-flex px:8 font:bold f:22@sm dash">—</span>
+
+<a {href} class="site-title sl-flex transform:translateY(-2):hover@sm">
+	<span class:list={{ 'sr-only': config.logo?.replacesTitle }}>
+		Docs
+	</span>
+</a>
+
+<style lang="scss">
+	.site-title {
+		align-items: center;
+        gap: calc(var(--sl-nav-gap));
+		font-size: var(--sl-text-h4);
+		font-weight: 600;
+		color: var(--sl-color-text-accent);
+		text-decoration: none;
+		white-space: nowrap;
+
+        &.dash {
+            color: var(--sl-color-text);
+        }
+
+        &.home {
+            color: var(--sl-color-text-accent-light);
+        }
+	}
+	img {
+		height: calc(var(--sl-nav-height) - 2 * var(--sl-nav-pad-y));
+		width: auto;
+		max-width: 100%;
+		object-fit: contain;
+		object-position: 0 50%;
+	}
+</style>

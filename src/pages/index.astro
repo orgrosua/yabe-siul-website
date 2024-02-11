@@ -1,0 +1,19 @@
+---
+import type { Props } from "@astrojs/starlight/props";
+
+import { getEntryBySlug } from "astro:content";
+import LandingLayout from "~/landing/Layout.astro";
+
+const generatedRouteData = await getEntryBySlug("pages", "/");
+
+const customProps = {
+    customProps: {
+        entry: {
+            ...generatedRouteData,
+        },
+    },
+};
+
+---
+
+<LandingLayout {...Astro.props} {...customProps} />

@@ -1,0 +1,59 @@
+name: Deploy to GitHub Pages
+
+on:
+  # Trigger the workflow every time you push to the `main` branch
+  # Using a different branch name? Replace `main` with your branch’s name
+  push:
+    branches: [ main ]
+  # Allows you to run this workflow manually from the Actions tab on GitHub.
+  workflow_dispatch:
+
+# Automatically cancel in-progress actions on the same branch
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request_target' && github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - name: Checkout your repository using git
+        uses: actions/checkout@v3
+      - name: Install, build, and upload your site
+        # uses: withastro/action@v1
+        uses: ./.github/actions/astro
+        # with:
+          # path: . # The root location of your Astro project inside the repository. (optional)
+          # node-version: 18 # The specific version of Node that should be used to build your site. Defaults to 18. (optional)
+          # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
+
+      - name: Set branch name
+        id: cloudflare_branch
+        run: |
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            echo "CLOUFLARE_BRANCH=main" >> $GITHUB_ENV
+          elif [ "${{ github.actor }}" = "suabahasa" ]; then
+            if [[ "${{ github.event.head_commit.message }}" =~ \[build:.*\] ]]; then
+              echo "CLOUFLARE_BRANCH=${BASH_REMATCH[1]}" >> $GITHUB_ENV
+            else
+              echo "CLOUFLARE_BRANCH=${{ github.ref }}" >> $GITHUB_ENV
+            fi
+          else
+            echo "CLOUFLARE_BRANCH=${{ github.ref }}" >> $GITHUB_ENV
+          fi
+
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: ${{ vars.CLOUDFLARE_PROJECT_NAME }}
+          directory: ./dist/
+          # Optional: Switch what branch you are publishing to.
+          # By default this will be the branch which triggered this workflow
+          branch:  ${{ env.CLOUFLARE_BRANCH }}
+          # Optional: Enable this if you want to have GitHub Deployments triggered
+          # gitHubToken: ${{ secrets.GITHUB_TOKEN }}

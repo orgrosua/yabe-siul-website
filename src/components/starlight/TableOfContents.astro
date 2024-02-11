@@ -1,0 +1,32 @@
+---
+import Default from "@astrojs/starlight/components/TableOfContents.astro";
+import type { Props } from "@astrojs/starlight/props";
+
+---
+
+<Default {...Astro.props}><slot /></Default>
+
+<nav class="community mt:16 {pr:6}_svg">
+    <h2>Community</h2>
+    <ul>
+        <li>
+            <a href="https://www.facebook.com/groups/1142662969627943" target="_blank">
+                <i class="fa-solid fa-message"></i>
+                <span>Join us on Facebook Group</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://rosua.org/support-portal" target="_blank">
+                <i class="fa-solid fa-headset"></i>
+                <span>Get Support</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<style scoped>
+    .community ul {
+        padding: 0;
+        list-style: none;
+    }
+</style>

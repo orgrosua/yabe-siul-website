@@ -1,0 +1,52 @@
+---
+import { getOgImageUrl } from "~/util/getOgImageUrl.ts";
+
+const { isFallback } = Astro.props;
+
+const ogImageUrl = getOgImageUrl(Astro.url.pathname, !!isFallback);
+const imageSrc = ogImageUrl ?? "/default-og-image.png";
+
+const canonicalImageSrc = new URL(imageSrc, Astro.site);
+---
+
+<meta property="og:image" content={canonicalImageSrc} />
+<meta name="twitter:image" content={canonicalImageSrc} />
+
+<script>
+    import { initCSSRuntime } from "@master/css-runtime";
+    import config from "../../master.css";
+
+    const root = document.documentElement;
+
+    new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.attributeName === "data-theme") {
+                const theme = root.getAttribute("data-theme");
+                if (theme) {
+                    root.classList.remove("light", "dark");
+                    root.classList.add(`${theme}`);
+                }
+            }
+        });
+    }).observe(root, { attributes: true });
+
+    initCSSRuntime(config);
+</script>
+<script src="https://kit.fontawesome.com/ee89d90c81.js" crossorigin="anonymous"
+></script>
+
+<!-- Analytics script -->
+<script
+    type="text/partytown"
+    defer
+    data-domain="siul.yabe.land"
+    data-api="https://plausible.suabahasa.dev/api/event"
+    src="https://plausible.suabahasa.dev/js/script.file-downloads.outbound-links.js"
+></script>
+
+<!-- Lightbox -->
+<script src="https://cdn.jsdelivr.net/npm/fslightbox@3.4.1/index.min.js"></script>
+
+<script>
+    import "~/assets/scripts/rosua.js";
+</script>

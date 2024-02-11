@@ -1,0 +1,18 @@
+{
+  "extends": "astro/tsconfigs/base",
+  "exclude": ["dist"],
+  "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"],
+      "@components/*": ["src/components/*"],
+      "@layouts/*": ["src/layouts/*"]
+    },
+  },
+  "plugins": [
+    {
+      "name": "@astrojs/ts-plugin"
+    },
+  ],
+}

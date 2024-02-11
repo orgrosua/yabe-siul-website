@@ -1,0 +1,27 @@
+---
+import type { Props } from "@astrojs/starlight/props";
+import Default from "@astrojs/starlight/components/Head.astro";
+import CommonHead from "@components/CommonHead.astro";
+---
+
+<Default {...Astro.props}><slot /></Default>
+<CommonHead {...Astro.props} />
+
+<script type="module">
+    while (!window.FsLightbox) {
+        await new Promise((resolve) => setTimeout(resolve, 200));
+    }
+
+    const fsl = new window.FsLightbox();
+
+    // Add lightbox to images in guides
+    document.querySelectorAll(".main-pane img").forEach((img) => {
+        fsl.props.sources.push(img.getAttribute("src"));
+        img.addEventListener("click", (e) => {
+            const imgSrc = e.target.getAttribute("src");
+            const index = fsl.props.sources.indexOf(imgSrc);
+            fsl.open(index);
+        });
+        img.classList.add("cursor:pointer");
+    });
+</script>

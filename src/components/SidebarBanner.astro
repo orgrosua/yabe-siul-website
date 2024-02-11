@@ -1,0 +1,64 @@
+---
+import SiulIcon from "~/icons/SiulIcon.jsx";
+---
+
+<aside class="not-content">
+  <div>
+    <a href="/#pricing">
+      <h2>Want to try Yabe Siul?</h2>
+    </a>
+    <p>
+      Grab your license to get started <b>→</b>
+    </p>
+  </div>
+  <div>
+    <SiulIcon width="180" className="w:32 h:32 " />
+  </div>
+</aside>
+
+<style>
+  aside {
+    margin: 1rem 0;
+    position: relative;
+    background-color: var(--sl-color-gray-6);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    border: 1px solid var(--sl-color-text-accent);
+    box-shadow: var(--sl-shadow-md);
+    overflow-y: hidden;
+  }
+  aside :global(a::before) {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+  aside :global(h2) {
+    font-size: var(--sl-text-lg) !important;
+  }
+  aside :global(p) {
+    font-size: var(--sl-text-sm) !important;
+    line-height: normal;
+  }
+  aside > :global(div:last-child) {
+    display: flex;
+    align-items: end;
+  }
+  aside :global(svg) {
+    margin-bottom: -1rem;
+    translate: 10px 15px;
+    width: 5.5rem;
+    height: auto;
+    transition:
+      rotate 0.5s ease,
+      translate 0.5s ease,
+      scale 0.5s ease;
+  }
+  aside:hover :global(svg) {
+    @media (prefers-reduced-motion: no-preference) {
+      translate: 10px 0px;
+      /* rotate: 5deg;
+      scale: 1.1; */
+    }
+  }
+</style>

@@ -1,0 +1,27 @@
+---
+import type { Props } from "@astrojs/starlight/props";
+
+import Head from "./Head.astro";
+import CommonHead from "@components/CommonHead.astro";
+import ThemeProvider from "virtual:starlight/components/ThemeProvider";
+import PageFrame from "virtual:starlight/components/PageFrame";
+import Landing from "./Landing.vue";
+
+const entry = Astro.props.customProps;
+---
+
+<html lang={Astro.props.lang} dir={Astro.props.dir} data-theme="dark">
+	<head>
+		<Head {...Astro.props} {entry} />
+		<ThemeProvider {...Astro.props} />
+		<script>
+			import "@master/normal.css";
+		</script>
+		<CommonHead {...Astro.props} />
+		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&amp;family=Lexend+Deca:wght@100..900&amp;family=Outfit:wght@100..900&amp;family=Roboto:wght@100..900&amp;display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<!-- <PageFrame {...Astro.props}></PageFrame> -->
+		<Landing client:only="vue" />
+	</body>
+</html>
