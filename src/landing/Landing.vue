@@ -34,8 +34,15 @@ const TESTIMONIALS = [
         createdAt: '2024-02-22',
         submitterName: 'Angel Julian Mena',
         submitterAvatar: 'https://s.gravatar.com/avatar/862747ad39a43ba17370e55e9532986b?s=100',
-        submitterTitle: 'Desarrollo de soluciones abiertas SL',
+        submitterTitle: 'flowtitude.com',
         message: `I am truly very happy that Joshua created SIUL, I am working with him and migrating my previous work from tailwind. It works very well and the support they provide is first class…`
+    },
+    {
+        createdAt: '2024-02-29',
+        submitterName: 'Daniel Maurel',
+        submitterAvatar: 'https://s.gravatar.com/avatar/d6832b181ad8c7e14a775ab149fa2a1d?s=100',
+        submitterTitle: '',
+        message: `Yabe Siul is a game-changer! Tailwind CSS customization and browser-based compilation simplify my work!!`
     },
 ];
 

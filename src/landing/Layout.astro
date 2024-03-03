@@ -10,7 +10,7 @@ import Landing from "./Landing.vue";
 const entry = Astro.props.customProps;
 ---
 
-<html lang={Astro.props.lang} dir={Astro.props.dir} data-theme="dark">
+<html lang={Astro.props.lang} dir={Astro.props.dir} data-theme="dark" style="display: none">
 	<head>
 		<Head {...Astro.props} {entry} />
 		<ThemeProvider {...Astro.props} />
