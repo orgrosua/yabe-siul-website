@@ -44,6 +44,13 @@ const TESTIMONIALS = [
         submitterTitle: '',
         message: `Yabe Siul is a game-changer! Tailwind CSS customization and browser-based compilation simplify my work!!`
     },
+    {
+        createdAt: '2024-03-07',
+        submitterName: 'Daniel Snell',
+        submitterAvatar: 'https://s.gravatar.com/avatar/c62179cf3cb331ccd7504e321ed8b0e0?s=100',
+        submitterTitle: 'Artisan Studios, Inc',
+        message: `Yabe Siul, crafted by Joshua, has simplified my Tailwind CSS work with its browser-based compilation, blending ease with flexibility. Joshua's responsive support enriches this seamless experience, making development feel personal and efficient.`
+    },
 ];
 
 const AS_SEEN_ON = [
@@ -70,6 +77,12 @@ const VISUAL_BUILDERS = [
         name: 'Bricks',
         url: '/guides/integrations/bricks',
         icon: 'assets/landing/builder-bricks.svg',
+        pro: true,
+    },
+    {
+        name: 'LiveCanvas',
+        url: '/guides/integrations/livecanvas',
+        icon: 'assets/landing/builder-livecanvas.png',
         pro: true,
     },
     {
