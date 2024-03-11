@@ -248,3 +248,66 @@ add_filter(`f!yabe/siul/core/runtime:enqueue_play_cdn.config.append`, function (
     return $append . '/* Your custom append */';
 });
 ```
+
+## Compiler's scanners
+
+During the cached CSS generation process, the Compiler scans the designs and generates the required styles. The design payload can be an HTML string, a JSON string, or a PHP array/object.
+
+The Compiler's scanners are composed of several `Provider`. Each `Provider` is responsible for scanning the design payload and feeding the Compiler with the design payload.
+
+Each registered `Provider` will be listed in the plugin's settings page. The user can enable or disable the `Provider` from the settings page.
+
+![Registered provider](../../../../assets/images/guides/integrations/developer/0.png)
+
+### Registering a Provider
+
+To register a `Provider`, you can use the `'f!yabe/siul/core/cache:compile.providers'` filter hook.
+
+```php
+<?php
+
+/**
+ * @param array $providers The collection of providers that will be used to scan the design payload
+ * @return array 
+ */
+function register_my_theme_provider(array $providers): array {
+    $providers[] = [
+        'id' => 'my_theme',
+        'name' => 'My Theme Scanner',
+        'description' => 'Scans the current active theme',
+        'callback' => 'scanner_my_theme_provider', // The function that will be called to get the data
+        'enabled' => \Yabe\Siul\Utils\Config::get(sprintf(
+            'integration.%s.enabled',
+            'my_theme' // The id of this custom provider
+        ), true),
+    ];
+
+    return $providers;
+}
+
+add_filter('f!yabe/siul/core/cache:compile.providers', 'register_my_theme_provider');
+```
+
+### The Provider's callback
+
+The `callback` key is the callable function that will be called to get the data. It can be a function name, a closure, or an array of class and method name. 
+
+The `callback` function must return the design payload as an array of `[ 'name' => '...', 'content' => '...' ]`.
+
+```php
+<?php
+
+function scanner_my_theme_provider(): array {
+    return [
+        [
+            'name' => 'Foo Template', // The name of the data
+            'content' => '<footer class="p-10 bg-blue-100">My custom foo</footer>', // The content of the data as an HTML string
+        ],
+        [
+            'name' => 'Bar Template', // The name of the data
+            'content' => [] // The content of the data as an array or object
+        ],
+        // ...
+    ];
+}
+```
