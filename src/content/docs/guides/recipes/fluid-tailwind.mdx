@@ -12,7 +12,7 @@ i18nReady: false
 - Ensures all fluid text meets accessibility requirements
 - etc.
 
-This guide will show you how to use fluid-tailwind on WordPress websites using Yabe Siul.
+In this guide, we will show you how to use fluid-tailwind on WordPress websites using Yabe Siul.
 
 ## Step 1: Open the Preset.JS panel
 
@@ -22,7 +22,11 @@ Go to `Yabe Siul → Tailwind CSS` and open the `preset.js` panel.
 
 ## Step 2: Add the fluid-tailwind package as a Tailwind CSS plugin
 
-Import the `fluid-tailwind` package and add it to the `presetConfig.plugins` array.
+Import the `fluidCorePlugins` from the `fluid-tailwind` package and add it to the `presetConfig.plugins` array.
+Then add the `fluidExtractor` to the `presetConfig.content.extract` property.
+
+To use the default theme screens and font sizes, you can import the `defaultThemeScreensInRems` and `defaultThemeFontSizeInRems` from the `fluid-tailwind` package and use them in the `presetConfig.theme.screens` and `presetConfig.theme.fontSize` properties.
+
 
 ```javascript {1, 9-10, 13, 15-18}
 import { fluidExtractor, fluidCorePlugins, defaultThemeScreensInRems, defaultThemeFontSizeInRems } from 'https://esm.sh/fluid-tailwind?bundle-deps&external=fs';
@@ -46,7 +50,7 @@ let presetConfig = {
 };
 ```
 
-![preset.js file](../../../../assets/images/guides/recipes/fluid-tailwind/0.png)
+![update preset.js file](../../../../assets/images/guides/recipes/fluid-tailwind/0.png)
 
 ## Step 3: Save the changes
 

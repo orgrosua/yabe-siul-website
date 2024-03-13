@@ -74,9 +74,27 @@ const VISUAL_BUILDERS = [
         pro: true,
     },
     {
+        name: 'Breakdance',
+        url: '/guides/integrations/breakdance',
+        icon: 'assets/landing/builder-breakdance.svg',
+        pro: true,
+    },
+    {
         name: 'Bricks',
         url: '/guides/integrations/bricks',
         icon: 'assets/landing/builder-bricks.svg',
+        pro: true,
+    },
+    {
+        name: 'GreenShift',
+        url: '/guides/integrations/greenshift',
+        icon: 'assets/landing/builder-greenshift.png',
+        pro: true,
+    },
+    {
+        name: 'Kadence WP',
+        url: '/guides/integrations/kadence',
+        icon: 'assets/landing/builder-kadencewp.svg',
         pro: true,
     },
     {

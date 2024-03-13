@@ -98,12 +98,28 @@ export default defineConfig({
                     link: '/guides/integrations/blockstudio/'
                 },
                 {
+                    label: 'Breakdance',
+                    link: '/guides/integrations/breakdance/'
+                },
+                {
                     label: 'Bricks',
                     link: '/guides/integrations/bricks/'
                 },
                 {
+                    label: 'GreenShift',
+                    link: '/guides/integrations/greenshift/'
+                },
+                {
                     label: 'Gutenberg',
                     link: '/guides/integrations/gutenberg/'
+                },
+                {
+                    label: 'Kadence WP',
+                    link: '/guides/integrations/kadence/'
+                },
+                {
+                    label: 'LiveCanvas',
+                    link: '/guides/integrations/livecanvas/'
                 },
                 {
                     label: 'Oxygen',
