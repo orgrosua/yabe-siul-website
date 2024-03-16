@@ -1,14 +1,16 @@
 ---
 title: Custom Theme
-description: Generating the Tailwind final CSS file for your custom theme.
+description: Generating the Tailwind final CSS file for your activated custom theme.
 i18nReady: false
 ---
 
-In this guide, we will show you the simple steps to generate the final CSS file for your custom theme.
+In this guide, we will show you the simple steps to generate the final CSS file for your activated custom theme.
 
 :::tip[Note]
-If the custom theme uses the standard WordPress hooks `wp_heads` on the template, the Play CDN or the cached CSS file will be loaded automatically on the front end.
+If the activated custom theme uses the standard WordPress hooks `wp_head` on the template, the Play CDN or the cached CSS file will be loaded automatically on the front end.
 :::
+
+Add the following code to your theme's `functions.php` file or a [Snippet plugin](https://wordpress.org/plugins/search/Snippet/).
 
 ## Step 1: Adding the Compiler's scanner
 
@@ -58,12 +60,15 @@ function scanner_my_theme_provider(): array {
     $contents = [];
     $finder = new \_YabeSiul\Symfony\Component\Finder\Finder();
 
+    // The current active theme 
     $wpTheme = wp_get_theme();
     $themeDir = $wpTheme->get_stylesheet_directory();
 
+    // Check if the current theme is a child theme and get the parent theme directory
     $has_parent = $wpTheme->parent() ? true : false;
     $parentThemeDir = $wpTheme->parent()->get_stylesheet_directory() ?? null;
 
+    // Scan the theme directory according to the file extensions
     foreach ($file_extensions as $extension) {
         $finder->files()->in($themeDir)->name('*.' . $extension);
         if ($has_parent) {
@@ -71,6 +76,7 @@ function scanner_my_theme_provider(): array {
         }
     }
 
+    // Get the file contents and send to the compiler
     foreach ($finder as $file) {
         $contents[] = [
             'name' => $file->getRelativePathname(),
