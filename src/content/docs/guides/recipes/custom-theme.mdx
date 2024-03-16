@@ -1,0 +1,85 @@
+---
+title: Custom Theme
+description: Generating the Tailwind final CSS file for your custom theme.
+i18nReady: false
+---
+
+In this guide, we will show you the simple steps to generate the final CSS file for your custom theme.
+
+:::tip[Note]
+If the custom theme uses the standard WordPress hooks, the Play CDN or the cached CSS file will be loaded automatically on the front end.
+:::
+
+## Step 1: Adding the Compiler's scanner
+
+To tell Yabe Siul's compiler to scan your custom theme, you need to add a custom scanner to the compiler. This scanner will be responsible for scanning your custom theme and returning the data to the compiler.
+
+```php
+<?php
+
+/**
+ * @param array $providers The collection of providers that will be used to scan the design payload
+ * @return array
+ */
+function register_my_theme_provider(array $providers): array {
+    $providers[] = [
+        'id' => 'my_theme',
+        'name' => 'My Theme Scanner',
+        'description' => 'Scans the current active theme',
+        'callback' => 'scanner_my_theme_provider', // The function that will be called to get the data
+        'enabled' => \Yabe\Siul\Utils\Config::get(sprintf(
+            'integration.%s.enabled',
+            'my_theme' // The id of this custom provider
+        ), true),
+    ];
+
+    return $providers;
+}
+
+add_filter('f!yabe/siul/core/cache:compile.providers', 'register_my_theme_provider');
+```
+
+## Step 2: Adding the Compiler's scanner callback
+
+Now that we have added the scanner, we need to define how the scanner will scan the custom theme and return the data to the compiler.
+
+```php
+<?php
+
+function scanner_my_theme_provider(): array {
+    // The file with this extension will be scanned
+    $file_extensions = [
+        'php',
+        'js',
+        'twig',
+        'html',
+    ];
+
+    $contents = [];
+    $finder = new \_YabeSiul\Symfony\Component\Finder\Finder();
+
+    $wpTheme = wp_get_theme();
+    $themeDir = $wpTheme->get_stylesheet_directory();
+
+    $has_parent = $wpTheme->parent() ? true : false;
+    $parentThemeDir = $wpTheme->parent()->get_stylesheet_directory() ?? null;
+
+    foreach ($file_extensions as $extension) {
+        $finder->files()->in($themeDir)->name('*.' . $extension);
+        if ($has_parent) {
+            $finder->files()->in($parentThemeDir)->name('*.' . $extension);
+        }
+    }
+
+    foreach ($finder as $file) {
+        $contents[] = [
+            'name' => $file->getRelativePathname(),
+            'content' => $file->getContents(),
+        ];
+    }
+
+    return $contents;
+}
+```
+
+Now that we have added the scanner and the scanner callback, we can now [generate the final CSS file](../../common/production#generating-the-cached-css-file) for your custom theme.

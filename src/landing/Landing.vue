@@ -51,6 +51,13 @@ const TESTIMONIALS = [
         submitterTitle: 'Artisan Studios, Inc',
         message: `Yabe Siul, crafted by Joshua, has simplified my Tailwind CSS work with its browser-based compilation, blending ease with flexibility. Joshua's responsive support enriches this seamless experience, making development feel personal and efficient.`
     },
+    {
+        createdAt: '2024-03-15',
+        submitterName: 'Martin Ardanaz',
+        submitterAvatar: 'https://s.gravatar.com/avatar/5971592298d939bec0e9498bb998db50?s=100',
+        submitterTitle: '',
+        message: `The arrival of Yabe Siul has simplified my work with Tailwind CSS in WordPress. Lightweight plugin, with extensive customization, easy to use and with features that I love such as compilation in the browser.`
+    },
 ];
 
 const AS_SEEN_ON = [
@@ -564,7 +571,7 @@ onMounted(() => {
                             <i class="fa-brands fa-wordpress"></i>
                         </div>
                         <div class="f:12 text:left">
-                            <strong>{{ totalDownloads }}+ Download</strong> & Counting
+                            <strong>{{ totalDownloads }}+ Active</strong> Sites
                         </div>
                     </div>
                 </div>
@@ -797,7 +804,7 @@ onMounted(() => {
 
             <div class="flex flex:column align-items:center mb:16">
                 <div class="px:16 py:6 r:8 bg:crimson-5 fg:crimson-70 b:1|solid|crimson-80 text:center font:medium ls:2 lh:1.5">
-                    <i class="fa-solid fa-gift fg:crimson-70 pr:6"></i> <span class="ls:1 font:bold">Official launch</span> offer: <code class="font:extrabold bg:white">LTD plan</code>, until <span class="ls:1 font:bold">Mar 14</span>
+                    <i class="fa-solid fa-gift fg:crimson-70 pr:6"></i> <span class="ls:1 font:bold">Official launch</span> offer: <code class="font:extrabold bg:white">LTD plan</code>, until <span class="ls:1 font:bold">March 31</span>
                 </div>
             </div>
 
