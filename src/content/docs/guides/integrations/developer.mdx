@@ -211,40 +211,32 @@ const suggestions = await siul.module.autocomplete.query(query);
 
 ## Main.CSS
 
-:::danger[Not implemented yet]
-This feature is not implemented yet. Please check back later.
-:::
-
 If you want to prepend or append the `main.css` file, you can use the available filter hooks. The appended content will not be loaded to the code editor in the plugin's settings page. It will only be loaded in the front end, editor's canvas view, or Compile engine.
 
 ```php
 <?php
 
-add_filter(`f!yabe/siul/core/runtime:enqueue_play_cdn.css.prepend`, function (string $prepend) {
+add_filter('f!yabe/siul/core/runtime:enqueue_play_cdn.css.prepend', function (string $prepend) {
     return $prepend . '/* Your custom prepend */';
 });
 
-add_filter(`f!yabe/siul/core/runtime:enqueue_play_cdn.css.append`, function (string $append) {
+add_filter('f!yabe/siul/core/runtime:enqueue_play_cdn.css.append', function (string $append) {
     return $append . '/* Your custom append */';
 });
 ```
 
 ## tailwind.config.js
 
-:::danger[Not implemented yet]
-This feature is not implemented yet. Please check back later.
-:::
-
 If you want to prepend or append the `tailwind.config.js` file, you can use the available filter hooks.
 
 ```php
 <?php
 
-add_filter(`f!yabe/siul/core/runtime:enqueue_play_cdn.config.prepend`, function (string $prepend) {
+add_filter('f!yabe/siul/core/runtime:enqueue_play_cdn.config.prepend', function (string $prepend) {
     return $prepend . '/* Your custom prepend */';
 });
 
-add_filter(`f!yabe/siul/core/runtime:enqueue_play_cdn.config.append`, function (string $append) {
+add_filter('f!yabe/siul/core/runtime:enqueue_play_cdn.config.append', function (string $append) {
     return $append . '/* Your custom append */';
 });
 ```
