@@ -10,16 +10,19 @@ Yabe Siul uses a hybrid approach to integrate Tailwind CSS into WordPress.
 
 During development, Yabe Siul uses the [Play CDN](https://tailwindcss.com/docs/installation/play-cdn) to dynamically create the required page styles. The Play CDN is designed for development purposes only, and is not the best choice for production.
 
-For the most performance in the production environment, Yabe Siul will use engine running right on your browser to generate a tiny single cached CSS file. We use [Lightning CSS](https://lightningcss.dev/) to minify CSS for the smallest possible build. None of your data is transferred over the network. Everything is done on your browser.
+For the most performance in the production environment, Yabe Siul will use engine running right on your browser to generate a tiny single cached CSS file. We use [Lightning CSS](https://lightningcss.dev/) to vendor prefix and minify CSS for the smallest possible build with wider browser support. None of your data is transferred over the network. Everything is done on your browser.
 
-## Generating the cached CSS file
+## Step 1: Generating the cached CSS file
 
 To generate the cached CSS file, you can go to `Yabe Siul → Settings` and open the `Performance` panel. Then, click the `Generate` button.
 
 ![Generating the cached CSS file](../../../../assets/images/guides/common/production/0.png)
 
-## Using the cached CSS file
+## Step 2: Using the cached CSS file
 
 Now that the cached CSS file is generated, you can start using it on the front end by ticking the `Use cached CSS if available` checkbox.
 
 ![Using the cached CSS file](../../../../assets/images/guides/common/production/1.png)
+
+## Step 3: Save the changes
+Save the changes and you are ready to get the best performance out of Tailwind CSS in WordPress.

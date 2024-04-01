@@ -48,7 +48,7 @@ const TESTIMONIALS = [
         createdAt: '2024-03-07',
         submitterName: 'Daniel Snell',
         submitterAvatar: 'https://s.gravatar.com/avatar/c62179cf3cb331ccd7504e321ed8b0e0?s=100',
-        submitterTitle: 'Artisan Studios, Inc',
+        submitterTitle: 'broke.dev',
         message: `Yabe Siul, crafted by Joshua, has simplified my Tailwind CSS work with its browser-based compilation, blending ease with flexibility. Joshua's responsive support enriches this seamless experience, making development feel personal and efficient.`
     },
     {
@@ -64,7 +64,7 @@ const AS_SEEN_ON = [
     // {
     //     name: 'some-publisher',
     //     url: 'https://some-publisher.com/',
-    //     logo: '../assets/landing/as-seen-on-some-publisher.png',
+    //     logo: '/assets/landing/as-seen-on-some-publisher.png',
     // },
 ];
 
@@ -596,7 +596,7 @@ onMounted(() => {
             <div class="mx:30@sm mx:40@md my:30 px:20">
                 <div class="rel p:10">
                     <figure>
-                        <img width="100%" height="100%" class="w:full h:auto r:8" src="../../../assets/landing/intro-screenshot.png" alt="">
+                        <img width="100%" height="100%" class="w:full h:auto r:8" src="/assets/landing/intro-screenshot.png" alt="">
                     </figure>
                     <!-- Watch the video -->
                     <!-- <a data-fslightbox href="https://youtu.be/">
@@ -648,7 +648,7 @@ onMounted(() => {
                             A simple and intuitive visual interface to customize your Tailwind CSS configuration without coding.
                         </div>
                     </div>
-                    <img class="abs@sm right:-220 top:-50 r:16 scale(.8)@sm pt:20 pt:0@sm" src="../../assets/landing/feature-bento-wizard-color.png" alt="feature: wizard colors" />
+                    <img class="abs@sm right:-220 top:-50 r:16 scale(.8)@sm pt:20 pt:0@sm" src="/assets/landing/feature-bento-wizard-color.png" alt="feature: wizard colors" />
                 </div>
                 <div class="rel bento__slot grid-col-span:3 grid-row-span:3 bg:rgba(201,228,222,0.5)">
                     <div class="bento__slot-title flex fg:tw-lime-900 align-items:center column-gap:15">
@@ -670,7 +670,7 @@ onMounted(() => {
                             Build a single static final CSS without a server. Use Tailwind CSS on any WordPress server, even shared hosting. All processing is done on your browser, and no data transfer occurs.
                         </div>
                     </div>
-                    <img class="abs@sm top:40% left:10% r:8 max-w:none pt:20 pt:0@sm" src="../../assets/landing/feature-bento-compile.png" alt="feature: compile" />
+                    <img class="abs@sm top:40% left:10% r:8 max-w:none pt:20 pt:0@sm" src="/assets/landing/feature-bento-compile.png" alt="feature: compile" />
                     <img class="abs@sm hidden block@sm z:-1 w:150 h:150 top:-40 right:-40 opacity:.5" src="https://upload.wikimedia.org/wikipedia/commons/5/52/Safari_browser_logo.svg" alt="Apple Safari logo" />
                     <img class="abs@sm hidden block@sm z:-1 w:150 h:150 top:-40 left:-40 opacity:.5" src="https://upload.wikimedia.org/wikipedia/commons/9/98/Microsoft_Edge_logo_%282019%29.svg" alt="Microsoft Edge logo" />
                     <img class="abs@sm hidden block@sm z:-1 w:150 h:150 bottom:-40 right:-40 opacity:.5" src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Firefox_logo%2C_2019.svg" alt="Mozilla Firefox logo" />
@@ -714,7 +714,7 @@ onMounted(() => {
                             As you type, class names will be suggested automatically. The Tailwind CSS cheat sheet is right on your visual builder editor. (available on certain integration)
                         </div>
                     </div>
-                    <img class="abs@sm right:-30  bottom:-80 r:8 scale(0.90)@sm pt:20 pt:0@sm" src="../../assets/landing/feature-bento-autocomplete.jpg" alt="feature: autocomplete" />
+                    <img class="abs@sm right:-30  bottom:-80 r:8 scale(0.90)@sm pt:20 pt:0@sm" src="/assets/landing/feature-bento-autocomplete.jpg" alt="feature: autocomplete" />
                 </div>
 
 
@@ -727,7 +727,7 @@ onMounted(() => {
                             Add extra functionality to your Tailwind CSS configuration with JavaScript packages through npm. Enrich Tailwind CSS with external plugins.
                         </div>
                     </div>
-                    <img class="abs@sm right:-90 bottom:-40 r:8 scale(0.7)@sm  pt:20 pt:0@sm" src="../../assets/landing/feature-bento-javascript-package.png" alt="feature: javascript package" />
+                    <img class="abs@sm right:-90 bottom:-40 r:8 scale(0.7)@sm  pt:20 pt:0@sm" src="/assets/landing/feature-bento-javascript-package.png" alt="feature: javascript package" />
                 </div>
 
                 <div class="rel bento__slot grid-col-span:3 grid-row-span:3 bg:rgba(199,210,254,0.5)">
@@ -739,7 +739,7 @@ onMounted(() => {
                             Start using it instantly without any configuration, and customize it as needed.
                         </div>
                     </div>
-                    <img class="abs@sm right:-70 bottom:-60 r:8 scale(.8)@sm pt:20 pt:0@sm" src="../../assets/landing/feature-bento-customizable.png" alt="feature: customizable" />
+                    <img class="abs@sm right:-70 bottom:-60 r:8 scale(.8)@sm pt:20 pt:0@sm" src="/assets/landing/feature-bento-customizable.png" alt="feature: customizable" />
                 </div>
 
                 <div class="rel bento__slot grid-col-span:3 grid-row-span:3 bg:rgba(219,205,240,0.5)">
@@ -752,7 +752,7 @@ onMounted(() => {
                         </div>
                     </div>
 
-                    <img class="abs@sm right:-70 bottom:-65 scale(0.6)@sm pt:20 pt:0@sm" src="../../assets/landing/feature-bento-wp-rest-api.png" alt="feature: lightweight and blazingly fast" />
+                    <img class="abs@sm right:-70 bottom:-65 scale(0.6)@sm pt:20 pt:0@sm" src="/assets/landing/feature-bento-wp-rest-api.png" alt="feature: lightweight and blazingly fast" />
                 </div>
             </div>
 
@@ -780,7 +780,7 @@ onMounted(() => {
                                 <p class="">{{ testimonial.message }}</p>
                             </blockquote>
                             <figcaption class="mt:24 flex align-items:center gap-x:16">
-                                <img class="h:40 w:40 rounded obj:cover" :src="testimonial.submitterAvatar ?? '.../../assets/landing/testimonial-gravatar.svg'" alt="">
+                                <img class="h:40 w:40 rounded obj:cover" :src="testimonial.submitterAvatar ?? './assets/landing/testimonial-gravatar.svg'" alt="">
                                 <div>
                                     <div class="font:semibold">{{ testimonial.submitterName }}</div>
                                     <div class="fg:gray-60">{{ testimonial.submitterTitle }}</div>
