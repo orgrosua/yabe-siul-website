@@ -167,7 +167,7 @@ const PRICING = [
     // },
     {
         duration: 'year',
-        amount: 19,
+        amount: 29,
         isMostPopular: false,
         isEmphasized: false,
         title: 'Personal',
@@ -192,7 +192,7 @@ const PRICING = [
     },
     {
         duration: 'year',
-        amount: 39,
+        amount: 49,
         isMostPopular: true,
         isEmphasized: false,
         title: 'Agency',
@@ -802,11 +802,11 @@ onMounted(() => {
         <!-- Pricing -->
         <div id="pricing" class="block-pricing max-w:screen-xl flex flex:column my:60 mx:20 mx:30@sm mx:40@md mx:auto@xl">
 
-            <div class="flex flex:column align-items:center mb:16">
+            <!-- <div class="flex flex:column align-items:center mb:16">
                 <div class="px:16 py:6 r:8 bg:crimson-5 fg:crimson-70 b:1|solid|crimson-80 text:center font:medium ls:2 lh:1.5">
                     <i class="fa-solid fa-gift fg:crimson-70 pr:6"></i> <span class="ls:1 font:bold">Official launch</span> offer: <code class="font:extrabold bg:white">LTD plan</code>, until <span class="ls:1 font:bold">March 31</span>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Title -->
             <h2 class="mb:22 f:36 font:semibold text:center">Pricing</h2>
@@ -817,7 +817,7 @@ onMounted(() => {
                 </p>
             </div>
 
-            <div class="flex justify-content:center my:30">
+            <!-- <div class="flex justify-content:center my:30">
                 <fieldset class="grid-cols:2 gap-x:4 rounded p:4 text:center f:14 font:semibold lh:1.6 box-shadow:rgb(255,255,255)|0px|0px|0px|0px|inset,rgb(229,231,235)|0px|0px|0px|1px|inset,rgba(0,0,0,0)|0px|0px|0px|0px">
                     <legend class="sr-only">Payment frequency</legend>
                     <label @click="selectedPricingDuration = 'year'" :class="[selectedPricingDuration === 'year' ? 'bg:blue-60 fg:white' : 'fg:gray-70 bg:blue-60/.1:hover']" class="cursor:pointer rounded px:10 py:4">
@@ -829,7 +829,7 @@ onMounted(() => {
                         <span>One-time</span>
                     </label>
                 </fieldset>
-            </div>
+            </div> -->
 
             <div class="pricing__wall w:full bg:white my:30 ">
 

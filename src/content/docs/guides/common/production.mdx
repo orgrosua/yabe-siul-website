@@ -10,7 +10,7 @@ Yabe Siul uses a hybrid approach to integrate Tailwind CSS into WordPress.
 
 During development, Yabe Siul uses the [Play CDN](https://tailwindcss.com/docs/installation/play-cdn) to dynamically create the required page styles. The Play CDN is designed for development purposes only, and is not the best choice for production.
 
-For the most performance in the production environment, Yabe Siul will use engine running right on your browser to generate a tiny single cached CSS file. We use [Lightning CSS](https://lightningcss.dev/) to vendor prefix and minify CSS for the smallest possible build with wider browser support. None of your data is transferred over the network. Everything is done on your browser.
+For the most performance in the production environment, Yabe Siul will use engine running right on your browser to generate a tiny single cached CSS file. We use [Lightning CSS](https://lightningcss.dev/) to vendor prefixing, fallbacks for modern syntaxes, handling nesting, and minifying for the smallest possible build with widest browser support. None of your data is transferred over the network. Everything is done on your browser.
 
 ## Step 1: Generating the cached CSS file
 
