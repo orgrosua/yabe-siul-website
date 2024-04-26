@@ -43,11 +43,85 @@ const canonicalImageSrc = new URL(imageSrc, Astro.site);
     data-api="https://plausible.suabahasa.dev/api/event"
     src="https://plausible.suabahasa.dev/js/script.file-downloads.outbound-links.js"
 ></script> -->
+
 <script
     type="text/partytown"
     defer src="https://eu.umami.is/script.js" 
     data-website-id="c9463b50-e754-4674-bac5-3c1eb09bbdd4"
 ></script>
+<script is:inline>
+    document.addEventListener('DOMContentLoaded', async function () {
+        const location = window.location;
+        const document = window.document;
+
+        document.addEventListener('click', handleLinkClickEvent);
+        document.addEventListener('auxclick', handleLinkClickEvent);
+
+        function isOutboundLink(link) {
+            return link && link.href && link.host && link.host !== location.host
+        }
+
+        const MIDDLE_MOUSE_BUTTON = 1;
+
+        function getLinkEl(link) {
+            while (link && (typeof link.tagName === 'undefined' || !isLink(link) || !link.href)) {
+                link = link.parentNode
+            }
+            return link
+        }
+
+        function isLink(element) {
+            return element && element.tagName && element.tagName.toLowerCase() === 'a'
+        }
+
+        function shouldFollowLink(event, link) {
+            // If default has been prevented by an external script, Plausible should not intercept navigation.
+            if (event.defaultPrevented) { return false }
+
+            let targetsCurrentWindow = !link.target || link.target.match(/^_(self|parent|top)$/i)
+            let isRegularClick = !(event.ctrlKey || event.metaKey || event.shiftKey) && event.type === 'click'
+            return targetsCurrentWindow && isRegularClick
+        }
+
+        function sendLinkClickEvent(event, link, eventAttrs) {
+            // if window.umami is not defined, the script has not loaded correctly, so we don't want to track the event
+            if (typeof window.umami === 'undefined') { return }
+
+            let followedLink = false
+
+            function followLink() {
+                if (!followedLink) {
+                    followedLink = true
+                    window.location = link.href
+                }
+            }
+
+            if (shouldFollowLink(event, link)) {
+                // let attrs = { props: eventAttrs.props, callback: followLink }
+
+                // plausible(eventAttrs.name, attrs)
+                umami.track(eventAttrs.name, eventAttrs.props)
+                setTimeout(followLink, 5000)
+                event.preventDefault()
+            } else {
+                // let attrs = { props: eventAttrs.props }
+
+                umami.track(eventAttrs.name, eventAttrs.props)
+            }
+        }
+
+        function handleLinkClickEvent(event) {
+            if (event.type === 'auxclick' && event.button !== MIDDLE_MOUSE_BUTTON) { return }
+
+            const link = getLinkEl(event.target)
+            const hrefWithoutQuery = link && link.href && link.href.split('?')[0]
+
+            if (isOutboundLink(link)) {
+                return sendLinkClickEvent(event, link, { name: 'Outbound Link: Click', props: { url: link.href } })
+            }
+        }
+    });
+</script>
 
 <!-- Lightbox -->
 <script src="https://cdn.jsdelivr.net/npm/fslightbox@3.4.1/index.min.js"></script>
