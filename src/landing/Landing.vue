@@ -167,6 +167,31 @@ const PRICING = [
     // },
     {
         duration: 'year',
+        amount: 7,
+        isMostPopular: false,
+        isEmphasized: false,
+        title: 'Starter',
+        subtitle: 'Get started with the most affordable plan and enjoy the full features',
+        features: [
+            'All features',
+            'All integrations',
+            {
+                icon: 'fa-regular fa-planet-ringed',
+                text: '1 personal/client site'
+            },
+            {
+                icon: 'fa-solid fa-rotate',
+                text: 'Free updates'
+            },
+            {
+                icon: 'fa-solid fa-headset',
+                text: 'Standard support'
+            },
+        ],
+        purchaseButton: { url: 'https://rosua.org/checkout/?edd_action=add_to_cart&download_id=2250&edd_options[price_id]=5' },
+    },
+    {
+        duration: 'year',
         amount: 29,
         isMostPopular: false,
         isEmphasized: false,
@@ -192,7 +217,7 @@ const PRICING = [
     },
     {
         duration: 'year',
-        amount: 49,
+        amount: 59,
         isMostPopular: true,
         isEmphasized: false,
         title: 'Agency',
@@ -221,7 +246,7 @@ const PRICING = [
     },
     {
         duration: 'one-time',
-        amount: 79,
+        amount: 129,
         isMostPopular: false,
         isEmphasized: false,
         title: 'Personal',
@@ -246,7 +271,7 @@ const PRICING = [
     },
     {
         duration: 'one-time',
-        amount: 159,
+        amount: 179,
         isMostPopular: false,
         isEmphasized: true,
         title: 'Agency',
@@ -817,7 +842,7 @@ onMounted(() => {
                 </p>
             </div>
 
-            <!-- <div class="flex justify-content:center my:30">
+            <div class="flex justify-content:center my:30">
                 <fieldset class="grid-cols:2 gap-x:4 rounded p:4 text:center f:14 font:semibold lh:1.6 box-shadow:rgb(255,255,255)|0px|0px|0px|0px|inset,rgb(229,231,235)|0px|0px|0px|1px|inset,rgba(0,0,0,0)|0px|0px|0px|0px">
                     <legend class="sr-only">Payment frequency</legend>
                     <label @click="selectedPricingDuration = 'year'" :class="[selectedPricingDuration === 'year' ? 'bg:blue-60 fg:white' : 'fg:gray-70 bg:blue-60/.1:hover']" class="cursor:pointer rounded px:10 py:4">
@@ -829,7 +854,7 @@ onMounted(() => {
                         <span>One-time</span>
                     </label>
                 </fieldset>
-            </div> -->
+            </div>
 
             <div class="pricing__wall w:full bg:white my:30 ">
 

@@ -4,4 +4,59 @@ description: 'How to use Tailwind CSS in the Oxygen'
 i18nReady: false
 ---
 
-Content will be added soon. Please check back later.
+[Oxygen](https://oxygenbuilder.com/) is the ultimate visual site builder for WordPress & WooCommerce. Use Oxygen's unparalelled power, flexibility, and light-weight code to visually design your WordPress or WooCommerce site with ease.
+
+## Using Tailwind CSS in Oxygen
+
+The Yabe Siul first-class integration with Oxygen allows you to use Tailwind CSS directly in Oxygen editor.
+
+Start type the Tailwind's class name in the Oxygen editor, and the element on the canvas will be styled accordingly.
+
+### Oxybender
+
+Yabe Siul is platform-agnostic. To ensure the development flexibility, we have seperated some Oxygen specific features into a separate plugin called **Yabe Oxybender**. This plugin is free and open-source. Visit https://oxybender.yabe.land for more information.
+
+### Plain Classes
+
+:::note
+Requires [**Oxybender**](#oxybender) plugin.
+:::
+
+Plain Classes is a field in the Oxygen editor that allows you to add custom classes to Oxygen elements without adding the class to the Global Class database.
+
+Once installed, you will see the `⚡` icon on the element panel.
+
+### Autocomplete class names
+
+:::note
+Requires [**Oxybender**](#oxybender) plugin.
+:::
+
+The Tailwind CSS cheat sheet is right on your visual builder editor. This makes it easy to use Tailwind CSS in Oxygen.
+
+As you type on the [Plain Classes](#plain-classes) field, Tailwind class names will be suggested automatically. You can use the arrow keys to navigate through the suggestions and press Enter to select the class name.
+
+To enable this feature, you can go to `Yabe Siul → Settings` and open the `General` panel. Then, tick the `Enable engine integration` checkbox.
+
+![autocomplete settings](../../../../assets/images/guides/integrations/bricks/0.png)
+
+
+### Hover Preview
+
+:::note
+Requires [**Oxybender**](#oxybender) plugin.
+:::
+
+Hover the Tailwind class name to see the completed generated CSS code.
+
+Based on the [official Tailwind CSS extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss#hover-preview).
+
+### Class Sorting
+
+:::note
+Requires [**Oxybender**](#oxybender) plugin.
+:::
+
+Automatic class name sorting based on the Tailwind CSS [official recommendation](https://tailwindcss.com/blog/automatic-class-sorting-with-prettier).
+
+Click the <code><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-inline--fa paragraph icon icon-tabler icons-tabler-outline icon-tabler-reorder"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M3 15m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z"></path><path d="M10 15m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z"></path><path d="M17 15m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z"></path><path d="M5 11v-3a3 3 0 0 1 3 -3h8a3 3 0 0 1 3 3v3"></path><path d="M16.5 8.5l2.5 2.5l2.5 -2.5"></path></svg></code> button and the class names will be sorted automatically based on the official recommendation.
