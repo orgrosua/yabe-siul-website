@@ -16,7 +16,7 @@ const totalDownloads = ref(0);
 
 const wp_v10 = ref({});
 const wp_v12 = ref({
-    version: '1.0.x',
+    version: '2.0.x',
     active_installs: 0,
     donate_link: 'https://ko-fi.com/Q5Q75XSF7',
     download_link: '/#pricing',
@@ -227,11 +227,7 @@ const PRICING = [
             'All integrations',
             {
                 icon: 'fa-regular fa-planet-ringed',
-                text: 'Unlimited personal sites'
-            },
-            {
-                icon: 'fa-regular fa-planet-ringed',
-                text: 'Unlimited client sites'
+                text: 'Unlimited personal/client sites'
             },
             {
                 icon: 'fa-solid fa-rotate',
@@ -281,11 +277,7 @@ const PRICING = [
             'All integrations',
             {
                 icon: 'fa-regular fa-planet-ringed',
-                text: 'Unlimited personal sites'
-            },
-            {
-                icon: 'fa-regular fa-planet-ringed',
-                text: 'Unlimited client sites'
+                text: 'Unlimited personal/client sites'
             },
             {
                 icon: 'fa-solid fa-rotate',

@@ -1204,9 +1204,9 @@ __metadata:
     "@astrojs/ts-plugin": "npm:1.6.1"
     "@astrojs/vue": "npm:4.0.9"
     "@docsearch/js": "npm:^3.6.0"
-    "@master/css": "npm:^2.0.0-rc.24"
-    "@master/css-runtime": "npm:^2.0.0-rc.24"
-    "@master/normal.css": "npm:^2.0.0"
+    "@master/css": "npm:^2.0.0-rc.34"
+    "@master/css-runtime": "npm:^2.0.0-rc.34"
+    "@master/normal.css": "npm:2.0.0-rc.22"
     "@rive-app/canvas": "npm:^2.10.3"
     "@sentry/astro": "npm:^7.106.0"
     "@spotlightjs/astro": "npm:^1.0.16"
@@ -1537,39 +1537,46 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@master/colors@npm:rc":
-  version: 2.0.0-rc.2
-  resolution: "@master/colors@npm:2.0.0-rc.2"
-  checksum: 10c0/92fed9d8dde37f9cf93bcf331183ef57556be7ce08069a2fee9582b93dbffbc25735564f341985dc10053d177aa0eb60ba8bbc9ad9240fa69aa6e114b25f56cd
+"@master/colors@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@master/colors@npm:2.0.0"
+  checksum: 10c0/e31a07943a2ec58f97a722a395a980dc11b4eb96e80a5dd918bc7a903415a86502de0d56500789d1504c6a11fe88a172db3445395dc058e9c944acba1be89265
   languageName: node
   linkType: hard
 
-"@master/css-runtime@npm:^2.0.0-rc.24":
-  version: 2.0.0-rc.24
-  resolution: "@master/css-runtime@npm:2.0.0-rc.24"
+"@master/css-runtime@npm:^2.0.0-rc.34":
+  version: 2.0.0-rc.34
+  resolution: "@master/css-runtime@npm:2.0.0-rc.34"
   dependencies:
-    "@master/css": "npm:^2.0.0-rc.24"
-  checksum: 10c0/2c467df7f2299844eb730948c95c000cd8658714d5fe7fa3c2bae76347020c49fe4f20aae538e75128944f71bcd875ee0d14ed41ad97c29edb8dbcc04742ccbc
+    "@master/css": "npm:^2.0.0-rc.34"
+  checksum: 10c0/1ce831c42f903fe9b9ec783cec6a88cb9d734b5f015708c1b0d3c15ad06b3ef7cad9c552ddac639f826b66d90f8876f13b9ac7e2e96c09416ae0298ff1e72485
   languageName: node
   linkType: hard
 
-"@master/css@npm:^2.0.0-rc.24":
-  version: 2.0.0-rc.24
-  resolution: "@master/css@npm:2.0.0-rc.24"
+"@master/css@npm:^2.0.0-rc.34":
+  version: 2.0.0-rc.34
+  resolution: "@master/css@npm:2.0.0-rc.34"
   dependencies:
-    "@master/colors": "npm:rc"
-    "@master/normal.css": "npm:^2.0.0"
-    "@techor/extend": "npm:^3.0.16"
+    "@master/colors": "npm:^2.0.0"
+    "@master/normal.css": "npm:^2.1.0"
+    "@techor/extend": "npm:^3.0.20"
   bin:
     css: dist/bin/index.mjs
-  checksum: 10c0/d3ee7bb21a1c5789b4048290c632fa985e717636d58baa0e02f4b9cfb075d913d115fc73cce8617c9928a5056ddef1630312e51fca255f66a9acd6bdd6cf2488
+  checksum: 10c0/20775a66f95f8c75e0f1cce6c352ea8ec4059bb1b3b566690c19e6b229a253a933fee723a9fc0a6ad925542d091217cb2beef2fa5de3a8704bf30b9f46ff0f6d
   languageName: node
   linkType: hard
 
-"@master/normal.css@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "@master/normal.css@npm:2.0.0"
-  checksum: 10c0/29e5cc933d99e83c5dc46ee9e10e314d15a2119349a626a0f0e205cfc574ea9651c6b77544f9a5f0c9153530a09dfdc284988807ea398aaed01323ac237467b0
+"@master/normal.css@npm:2.0.0-rc.22":
+  version: 2.0.0-rc.22
+  resolution: "@master/normal.css@npm:2.0.0-rc.22"
+  checksum: 10c0/b9254537228232c628ca52092a5cc4b532926eba16a06e1448eacbadc25f9dbf5195994d2019f8d922dfda68e87ed228f470827f616c002776267aa9df10100a
+  languageName: node
+  linkType: hard
+
+"@master/normal.css@npm:^2.1.0":
+  version: 2.1.1
+  resolution: "@master/normal.css@npm:2.1.1"
+  checksum: 10c0/370933749b016dd884a1dd0838efc881f1f1680b1dc6035d366342bcb9d4ff5029541ee326f96bf961935a68dd15c5e6560a69f87ecaa769452779614dd21d8f
   languageName: node
   linkType: hard
 
@@ -2078,10 +2085,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@techor/extend@npm:^3.0.16":
-  version: 3.0.18
-  resolution: "@techor/extend@npm:3.0.18"
-  checksum: 10c0/89e12075030a041bf8149da7b39462788f7aa9eb5f79e43206ff925e9132698fa96cd8d2901e32c8de27549fd7ab138fdd8a1e923da7c91b4c4b10fafc63b52d
+"@techor/extend@npm:^3.0.20":
+  version: 3.0.21
+  resolution: "@techor/extend@npm:3.0.21"
+  checksum: 10c0/94105924052c91f0ceaa66904c40f34008f4063f619686b57704d7c0dbd1b63569e04fd488d4ad48e4efb11b94513e8935d02b4bf94178b5d83543fe3303a7e4
   languageName: node
   linkType: hard
 
