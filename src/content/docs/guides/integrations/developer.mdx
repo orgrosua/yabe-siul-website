@@ -135,49 +135,7 @@ add_filter('f!yabe/siul/core/runtime:append_header.exclude_admin', true);
 
 Yabe Siul has Autocomplete engine built-in. It can be used to generate suggestions for Tailwind CSS class names on-the-fly.
 
-If the [default behavior](#default-behavior) is not disabled and the `Enable engine integration` setting are enabled by the user, the Autocomplete engine will be loaded along with the [Play CDN](#using-play-cdn) in the front end via the `wp_head` hook.
-
-### Manually load the Autocomplete engine
-
-:::caution[Note]
-The Play CDN must be loaded before the Autocomplete engine.
-:::
-
-To load the Autocomplete engine, you can get the module data and use it to prepare the Autocomplete engine running on your environment.
-
-```php
-/**
- * @var array $prepared_module
- */
-$prepared_module = \Yabe\Siul\Core\Runtime::get_instance()->prepare_module_autocomplete();
-```
-
-The returned `$prepared_module` is an array that contains the module data which can be used to load the assets. The `$prepared_module` variable contains the following data:
-
-```php
-[
-    'dependencies' => ['wp-hooks'], // list of dependencies
-    'assets' => [
-        'js' => [
-            '...',
-            // relative path of the js files
-        ],
-        'css' => [
-            '...',
-            // relative path of the css files
-        ],
-    ],
-    'data' => [
-        '_version' => '1.0.0', // version of the Yabe Siul plugin
-        'assets' => [
-            'url' => 'http://example.com/wp-content/plugins/yabe-siul/build/', // url of the assets folder
-        ],
-        'tailwind' => [
-            'version' => '3.0.0', // tailwind version used
-        ],
-    ],
-];
-```
+If the [default behavior](#default-behavior) is not disabled by the user, the Autocomplete engine will be loaded along with the [Play CDN](#using-play-cdn) in the front end via the `wp_head` hook.
 
 ### Using the Autocomplete engine suggestions
 
@@ -195,7 +153,7 @@ const query = 'bg-';
 const suggestions = await window.wp.hooks.applyFilters('siul.module.autocomplete', query);
 ```
 
-If the Autocomplete engine is manually loaded, you can use the `siul.module.autocomplete.query` object to query the suggestions.
+If the global `wp.hooks` object is not available, you can use the `siul.module.autocomplete.query` object to query the suggestions.
 
 ```js
 /**

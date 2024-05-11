@@ -24,11 +24,25 @@ const wp_v12 = ref({
 
 const TESTIMONIALS = [
     {
+        createdAt: '2024-03-15',
+        submitterName: 'Martin Ardanaz',
+        submitterAvatar: 'https://s.gravatar.com/avatar/5971592298d939bec0e9498bb998db50?s=100',
+        submitterTitle: '',
+        message: `The arrival of Yabe Siul has simplified my work with Tailwind CSS in WordPress. Lightweight plugin, with extensive customization, easy to use and with features that I love such as compilation in the browser.`
+    },
+    {
         createdAt: '2023-02-05',
         submitterName: 'Ramiro Martin Alonso',
         submitterAvatar: 'https://secure.gravatar.com/avatar/8ece04c0d5d93d8f32766d72182d6c63?s=100',
         submitterTitle: 'E4 Market Services',
         message: `I have purchased Yabe Siul, and my first impressions have left me pleasantly surprised, it is an advanced complement, it works very fast and precise, I am very happy to have purchased it, I recommend it 100%`
+    },
+    {
+        createdAt: '2024-03-07',
+        submitterName: 'Daniel Snell',
+        submitterAvatar: 'https://s.gravatar.com/avatar/c62179cf3cb331ccd7504e321ed8b0e0?s=100',
+        submitterTitle: 'broke.dev',
+        message: `Yabe Siul, crafted by Joshua, has simplified my Tailwind CSS work with its browser-based compilation, blending ease with flexibility. Joshua's responsive support enriches this seamless experience, making development feel personal and efficient.`
     },
     {
         createdAt: '2024-02-22',
@@ -43,20 +57,6 @@ const TESTIMONIALS = [
         submitterAvatar: 'https://s.gravatar.com/avatar/d6832b181ad8c7e14a775ab149fa2a1d?s=100',
         submitterTitle: '',
         message: `Yabe Siul is a game-changer! Tailwind CSS customization and browser-based compilation simplify my work!!`
-    },
-    {
-        createdAt: '2024-03-07',
-        submitterName: 'Daniel Snell',
-        submitterAvatar: 'https://s.gravatar.com/avatar/c62179cf3cb331ccd7504e321ed8b0e0?s=100',
-        submitterTitle: 'broke.dev',
-        message: `Yabe Siul, crafted by Joshua, has simplified my Tailwind CSS work with its browser-based compilation, blending ease with flexibility. Joshua's responsive support enriches this seamless experience, making development feel personal and efficient.`
-    },
-    {
-        createdAt: '2024-03-15',
-        submitterName: 'Martin Ardanaz',
-        submitterAvatar: 'https://s.gravatar.com/avatar/5971592298d939bec0e9498bb998db50?s=100',
-        submitterTitle: '',
-        message: `The arrival of Yabe Siul has simplified my work with Tailwind CSS in WordPress. Lightweight plugin, with extensive customization, easy to use and with features that I love such as compilation in the browser.`
     },
 ];
 
@@ -78,7 +78,6 @@ const VISUAL_BUILDERS = [
         name: 'Blockstudio',
         url: '/guides/integrations/blockstudio',
         icon: 'assets/landing/builder-blockstudio.svg',
-        pro: true,
     },
     {
         name: 'Breakdance',
@@ -96,19 +95,16 @@ const VISUAL_BUILDERS = [
         name: 'GreenShift',
         url: '/guides/integrations/greenshift',
         icon: 'assets/landing/builder-greenshift.png',
-        pro: true,
     },
     {
         name: 'Kadence WP',
         url: '/guides/integrations/kadence',
         icon: 'assets/landing/builder-kadencewp.svg',
-        pro: true,
     },
     {
         name: 'LiveCanvas',
         url: '/guides/integrations/livecanvas',
         icon: 'assets/landing/builder-livecanvas.png',
-        pro: true,
     },
     {
         name: 'Oxygen',
@@ -120,7 +116,6 @@ const VISUAL_BUILDERS = [
         name: 'Timber',
         url: '/guides/integrations/timber',
         icon: 'assets/landing/builder-timber.svg',
-        pro: true,
     },
     {
         name: 'Plugins & Themes Dev',
@@ -658,7 +653,9 @@ onMounted(() => {
             <div class="bento flex flex:col grid@sm grid-cols:12@sm grid-rows:12@md gap:16 w:full square my:60 {r:8;w:full;overflow:hidden}_.bento__slot {px:22;pt:22}_.bento__slot-title {px:22}_.bento__slot-description">
                 <div class="rel bento__slot grid-col-span:12 grid-row-span:3 bg:rgba(229,231,235,0.5)">
                     <div class="bento__slot-title flex fg:tw-gray-900 align-items:center column-gap:15">
-                        <div class="f:18 font:semibold">The Wizard</div>
+                        <a href="/guides/configuration/wizard/">
+                            <div class="f:18 font:semibold">The Wizard</div>
+                        </a>
                     </div>
                     <div class="bento__slot-description mt:10 lh:1.5">
                         <div class="w:25%@sm">
@@ -680,7 +677,9 @@ onMounted(() => {
                 </div>
                 <div class="rel bento__slot grid-col-span:3 grid-row-span:6 bg:rgba(250,237,203,0.5)">
                     <div class="bento__slot-title flex fg:tw-yellow-900 align-items:center column-gap:15">
-                        <div class="f:18 font:semibold">Compile in the browser; No server is required</div>
+                        <a href="/guides/common/production/">
+                            <div class="f:18 font:semibold">Compile in the browser; No server is required</div>
+                        </a>
                     </div>
                     <div class="bento__slot-description mt:10 lh:1.5">
                         <div>
@@ -737,7 +736,9 @@ onMounted(() => {
 
                 <div class="rel bento__slot grid-col-span:6 grid-row-span:3 bg:rgba(242,198,222,0.5)">
                     <div class="bento__slot-title flex fg:tw-orange-900 align-items:center column-gap:15">
-                        <div class="f:18 font:semibold">JavaScript package support</div>
+                        <a href="/guides/configuration/preset-js/#javascript-package">
+                            <div class="f:18 font:semibold">JavaScript package support</div>
+                        </a>
                     </div>
                     <div class="bento__slot-description mt:10 lh:1.5">
                         <div>
@@ -749,7 +750,9 @@ onMounted(() => {
 
                 <div class="rel bento__slot grid-col-span:3 grid-row-span:3 bg:rgba(199,210,254,0.5)">
                     <div class="bento__slot-title flex fg:tw-indigo-900 align-items:center column-gap:15">
-                        <div class="f:18 font:semibold">Zero configuration yet fully customizable</div>
+                        <a href="/guides/configuration/preset-js/">
+                            <div class="f:18 font:semibold">Zero configuration yet fully customizable</div>
+                        </a>
                     </div>
                     <div class="bento__slot-description mt:10 lh:1.5">
                         <div>
