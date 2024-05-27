@@ -28,8 +28,8 @@ Then add the `fluidExtractor` to the `presetConfig.content.extract` property.
 To use the default theme screens and font sizes, you can import the `defaultThemeScreensInRems` and `defaultThemeFontSizeInRems` from the `fluid-tailwind` package and use them in the `presetConfig.theme.screens` and `presetConfig.theme.fontSize` properties.
 
 
-```javascript {1, 9-10, 13, 15-18}
-import { fluidExtractor, fluidCorePlugins, defaultThemeScreensInRems, defaultThemeFontSizeInRems } from 'https://esm.sh/fluid-tailwind@0.1.6?bundle-deps&external=fs';
+```javascript {1, 9-10, 13, 16-18}
+import fluid, { extract, screens, fontSize } from 'https://esm.sh/fluid-tailwind?bundle-deps&external=fs';
 
 /**
  * @type {import('tailwindcss').Config} 
@@ -37,16 +37,17 @@ import { fluidExtractor, fluidCorePlugins, defaultThemeScreensInRems, defaultThe
 let presetConfig = {
     theme: {
         extend: {},
-        fontSize: defaultThemeFontSizeInRems,
-        screens: defaultThemeScreensInRems,
+        fontSize,
+        screens,
+    },
+    content: {
+        extract
     },
     plugins: [
-        fluidCorePlugins,
-    ],
-    content: {
-        files: [],
-        extract: fluidExtractor()
-    },
+        fluid({
+            checkExtractConfig: false
+        }),
+    ]
 };
 ```
 
