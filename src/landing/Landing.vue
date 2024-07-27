@@ -83,13 +83,13 @@ const VISUAL_BUILDERS = [
         name: 'Breakdance',
         url: '/guides/integrations/breakdance',
         icon: 'assets/landing/builder-breakdance.svg',
-        pro: true,
+        // pro: true,
     },
     {
         name: 'Bricks',
         url: '/guides/integrations/bricks',
         icon: 'assets/landing/builder-bricks.svg',
-        pro: true,
+        // pro: true,
     },
     {
         name: 'GreenShift',
@@ -110,7 +110,7 @@ const VISUAL_BUILDERS = [
         name: 'Oxygen',
         url: '/guides/integrations/oxygen',
         icon: 'assets/landing/builder-oxygen.svg',
-        pro: true,
+        // pro: true,
     },
     {
         name: 'Timber',
@@ -125,166 +125,167 @@ const VISUAL_BUILDERS = [
 ];
 
 const PRICING = [
+    {
+        duration: 'year',
+        amount: 0,
+        isMostPopular: false,
+        isEmphasized: false,
+        title: 'Starter',
+        subtitle: 'Get started with the free version and enjoy the full features',
+        features: [
+            'All features',
+            'All integrations',
+            // {
+            //     icon: 'fa-regular fa-asterisk',
+            //     text: 'Limited integrations'
+            // },
+            {
+                icon: 'fa-regular fa-planet-ringed',
+                text: 'Unlimited personal sites'
+            },
+            {
+                icon: 'fa-regular fa-planet-ringed',
+                text: 'Unlimited client sites'
+            },
+            {
+                icon: 'fa-solid fa-rotate',
+                text: 'Free updates'
+            },
+            {
+                icon: 'fa-solid fa-messages',
+                text: 'Community support'
+            },
+        ],
+        purchaseButton: {
+            text: 'Download',
+            url: 'https://rosua.org/checkout/?edd_action=add_to_cart&download_id=3591',
+        },
+    },
     // {
     //     duration: 'year',
-    //     amount: 0,
+    //     amount: 7,
     //     isMostPopular: false,
     //     isEmphasized: false,
     //     title: 'Starter',
-    //     subtitle: 'Get started with the free version and enjoy the full features',
+    //     subtitle: 'Get started with the most affordable plan and enjoy the full features',
     //     features: [
     //         'All features',
-    //         {
-    //             icon: 'fa-regular fa-asterisk',
-    //             text: 'Limited integrations'
-    //         },
+    //         'All integrations',
     //         {
     //             icon: 'fa-regular fa-planet-ringed',
-    //             text: 'Unlimited personal sites'
-    //         },
-    //         {
-    //             icon: 'fa-regular fa-planet-ringed',
-    //             text: 'Unlimited client sites'
+    //             text: '1 personal/client site'
     //         },
     //         {
     //             icon: 'fa-solid fa-rotate',
     //             text: 'Free updates'
     //         },
     //         {
-    //             icon: 'fa-solid fa-messages',
-    //             text: 'Community support'
+    //             icon: 'fa-solid fa-headset',
+    //             text: 'Standard support'
     //         },
     //     ],
-    //     purchaseButton: {
-    //         text: 'Download',
-    //         url: 'https://wordpress.org/plugins/yabe-siul',
-    //     },
+    //     purchaseButton: { url: 'https://rosua.org/checkout/?edd_action=add_to_cart&download_id=2250&edd_options[price_id]=5' },
     // },
-    {
-        duration: 'year',
-        amount: 7,
-        isMostPopular: false,
-        isEmphasized: false,
-        title: 'Starter',
-        subtitle: 'Get started with the most affordable plan and enjoy the full features',
-        features: [
-            'All features',
-            'All integrations',
-            {
-                icon: 'fa-regular fa-planet-ringed',
-                text: '1 personal/client site'
-            },
-            {
-                icon: 'fa-solid fa-rotate',
-                text: 'Free updates'
-            },
-            {
-                icon: 'fa-solid fa-headset',
-                text: 'Standard support'
-            },
-        ],
-        purchaseButton: { url: 'https://rosua.org/checkout/?edd_action=add_to_cart&download_id=2250&edd_options[price_id]=5' },
-    },
-    {
-        duration: 'year',
-        amount: 29,
-        isMostPopular: false,
-        isEmphasized: false,
-        title: 'Personal',
-        subtitle: 'Best for blogger, individual & solopreneur',
-        features: [
-            'All features',
-            'All integrations',
-            {
-                icon: 'fa-regular fa-planet-ringed',
-                text: 'Unlimited personal sites'
-            },
-            {
-                icon: 'fa-solid fa-rotate',
-                text: 'Free updates'
-            },
-            {
-                icon: 'fa-solid fa-headset',
-                text: 'Standard support'
-            },
-        ],
-        purchaseButton: { url: 'https://rosua.org/checkout/?edd_action=add_to_cart&download_id=2250&edd_options[price_id]=1' },
-    },
-    {
-        duration: 'year',
-        amount: 59,
-        isMostPopular: true,
-        isEmphasized: false,
-        title: 'Agency',
-        subtitle: 'Perfect For Agency Owners with high volume',
-        features: [
-            'All features',
-            'All integrations',
-            {
-                icon: 'fa-regular fa-planet-ringed',
-                text: 'Unlimited personal/client sites'
-            },
-            {
-                icon: 'fa-solid fa-rotate',
-                text: 'Free updates'
-            },
-            {
-                icon: 'fa-solid fa-headset',
-                text: 'Standard support'
-            },
-        ],
-        purchaseButton: { url: 'https://rosua.org/checkout/?edd_action=add_to_cart&download_id=2250&edd_options[price_id]=2' },
-    },
-    {
-        duration: 'one-time',
-        amount: 129,
-        isMostPopular: false,
-        isEmphasized: false,
-        title: 'Personal',
-        subtitle: 'Best for blogger, individual & solopreneur',
-        features: [
-            'All features',
-            'All integrations',
-            {
-                icon: 'fa-regular fa-planet-ringed',
-                text: 'Unlimited personal sites'
-            },
-            {
-                icon: 'fa-solid fa-rotate',
-                text: 'Free updates'
-            },
-            {
-                icon: 'fa-solid fa-headset',
-                text: 'Standard support (first year)'
-            },
-        ],
-        purchaseButton: { url: 'https://rosua.org/checkout/?edd_action=add_to_cart&download_id=2250&edd_options[price_id]=3' },
-    },
-    {
-        duration: 'one-time',
-        amount: 179,
-        isMostPopular: false,
-        isEmphasized: true,
-        title: 'Agency',
-        subtitle: 'Perfect For Agency Owners with high volume',
-        features: [
-            'All features',
-            'All integrations',
-            {
-                icon: 'fa-regular fa-planet-ringed',
-                text: 'Unlimited personal/client sites'
-            },
-            {
-                icon: 'fa-solid fa-rotate',
-                text: 'Free updates'
-            },
-            {
-                icon: 'fa-solid fa-headset',
-                text: 'Standard support (first year)'
-            },
-        ],
-        purchaseButton: { url: 'https://rosua.org/checkout/?edd_action=add_to_cart&download_id=2250&edd_options[price_id]=4' },
-    },
+    // {
+    //     duration: 'year',
+    //     amount: 29,
+    //     isMostPopular: false,
+    //     isEmphasized: false,
+    //     title: 'Personal',
+    //     subtitle: 'Best for blogger, individual & solopreneur',
+    //     features: [
+    //         'All features',
+    //         'All integrations',
+    //         {
+    //             icon: 'fa-regular fa-planet-ringed',
+    //             text: 'Unlimited personal sites'
+    //         },
+    //         {
+    //             icon: 'fa-solid fa-rotate',
+    //             text: 'Free updates'
+    //         },
+    //         {
+    //             icon: 'fa-solid fa-headset',
+    //             text: 'Standard support'
+    //         },
+    //     ],
+    //     purchaseButton: { url: 'https://rosua.org/checkout/?edd_action=add_to_cart&download_id=2250&edd_options[price_id]=1' },
+    // },
+    // {
+    //     duration: 'year',
+    //     amount: 59,
+    //     isMostPopular: true,
+    //     isEmphasized: false,
+    //     title: 'Agency',
+    //     subtitle: 'Perfect For Agency Owners with high volume',
+    //     features: [
+    //         'All features',
+    //         'All integrations',
+    //         {
+    //             icon: 'fa-regular fa-planet-ringed',
+    //             text: 'Unlimited personal/client sites'
+    //         },
+    //         {
+    //             icon: 'fa-solid fa-rotate',
+    //             text: 'Free updates'
+    //         },
+    //         {
+    //             icon: 'fa-solid fa-headset',
+    //             text: 'Standard support'
+    //         },
+    //     ],
+    //     purchaseButton: { url: 'https://rosua.org/checkout/?edd_action=add_to_cart&download_id=2250&edd_options[price_id]=2' },
+    // },
+    // {
+    //     duration: 'one-time',
+    //     amount: 129,
+    //     isMostPopular: false,
+    //     isEmphasized: false,
+    //     title: 'Personal',
+    //     subtitle: 'Best for blogger, individual & solopreneur',
+    //     features: [
+    //         'All features',
+    //         'All integrations',
+    //         {
+    //             icon: 'fa-regular fa-planet-ringed',
+    //             text: 'Unlimited personal sites'
+    //         },
+    //         {
+    //             icon: 'fa-solid fa-rotate',
+    //             text: 'Free updates'
+    //         },
+    //         {
+    //             icon: 'fa-solid fa-headset',
+    //             text: 'Standard support (first year)'
+    //         },
+    //     ],
+    //     purchaseButton: { url: 'https://rosua.org/checkout/?edd_action=add_to_cart&download_id=2250&edd_options[price_id]=3' },
+    // },
+    // {
+    //     duration: 'one-time',
+    //     amount: 179,
+    //     isMostPopular: false,
+    //     isEmphasized: true,
+    //     title: 'Agency',
+    //     subtitle: 'Perfect For Agency Owners with high volume',
+    //     features: [
+    //         'All features',
+    //         'All integrations',
+    //         {
+    //             icon: 'fa-regular fa-planet-ringed',
+    //             text: 'Unlimited personal/client sites'
+    //         },
+    //         {
+    //             icon: 'fa-solid fa-rotate',
+    //             text: 'Free updates'
+    //         },
+    //         {
+    //             icon: 'fa-solid fa-headset',
+    //             text: 'Standard support (first year)'
+    //         },
+    //     ],
+    //     purchaseButton: { url: 'https://rosua.org/checkout/?edd_action=add_to_cart&download_id=2250&edd_options[price_id]=4' },
+    // },
 ];
 
 
@@ -330,10 +331,10 @@ onBeforeMount(() => {
     fetch('https://rosua.org/wp-json/rosua-edd/v1/stats/total_sites')
         .then(res => res.json())
         .then(res => {
-            // search array of object with download_id = 2250 (Yabe Siul)
-            const download = res.find(item => item.download_id === 2250);
-            activeSites.value += download.count_sites;
-            totalDownloads.value += download.count_sites;
+            // search array of object with download_id = 2250 (WindPress) and 3591 (Yabe Siul) to get the total active sites
+            const downloads = res.filter(item => item.download_id === 2250 || item.download_id === 3591);
+            activeSites.value += downloads.reduce((acc, curr) => acc + curr.count_sites, 0);
+            totalDownloads.value += downloads.reduce((acc, curr) => acc + curr.count_sites, 0);
         })
         .catch(err => {
             console.log(err);
@@ -386,7 +387,7 @@ onMounted(() => {
     }
 });
 </script>
-    
+
 <template>
     <header class="sticky@md top:0 flex w:full mx:auto z:99999 bg:white justify-content:center bb:1|solid|rgba(0,0,0,0.1)">
         <div class="flex w:full max-w:screen-xl align-items:center px:32">
@@ -411,7 +412,7 @@ onMounted(() => {
             <nav class="hidden flex@md primary-nav">
                 <div class="flex align-items:center mr:18">
                     <a href="/#features" class="px:15 bg:green-80/.1:hover py:8:hover r:8">Features</a>
-                    <a href="/#pricing" class="px:15 bg:green-80/.1:hover py:8:hover r:8">Pricing</a>
+                    <!-- <a href="/#pricing" class="px:15 bg:green-80/.1:hover py:8:hover r:8">Pricing</a> -->
                     <a href="/docs" class="px:15 bg:green-80/.1:hover py:8:hover r:8">Documentation</a>
                     <a href="https://www.facebook.com/groups/1142662969627943" class="px:15 bg:green-80/.1:hover py:8:hover r:8">Community</a>
                     <!-- <a class="px:15 bg:green-80/.1:hover py:8:hover r:8">Blogs</a> -->
@@ -436,7 +437,7 @@ onMounted(() => {
                 <nav class="align-items:center flex h:full primary-nav">
                     <ul class="mobile-menu__container flex flex:col gap-y:20 mx:auto text:center">
                         <li><a href="/#features" class="mobile-menu__link">Features</a></li>
-                        <li><a href="/#pricing" class="mobile-menu__link">Pricing</a></li>
+                        <!-- <li><a href="/#pricing" class="mobile-menu__link">Pricing</a></li> -->
                         <li><a href="/docs">Documentation</a></li>
                         <li><a href="https://www.facebook.com/groups/1142662969627943">Community</a></li>
                         <!-- <li>Blogs</li> -->
@@ -447,8 +448,17 @@ onMounted(() => {
         </Transition>
     </header>
     <main id="main">
+
         <!-- Intro -->
         <div class="block-intro w:full max-w:screen-xl mx:auto flex flex:column text:center my:60">
+
+            <div class="flex flex:column align-items:center">
+                <div class="px:16 py:6 r:8 bg:sky-5 fg:sky-70 b:1|solid|sky-80 text:center font:medium ls:2 lh:1.5">
+                    <i class="fa-solid fa-bullhorn fg:sky-70 pr:6"></i> The <span class="ls:1 font:bold">Tailwind CSS v4</span> support is now available at <a href="https://wind.press" class="ls:1 font:bold text:underline">https://wind.press</a>
+                </div>
+            </div>
+
+
             <!-- Headline -->
             <div class="headline px:20 mx:30 my:30 lh:1.4">
                 <!-- <h1 class="title mt:55 f:30 f:38@sm f:48@md font:bold fg:#222">The <span class="bg:grass-90 r:8 px:6">GDPR-friendly</span> Font Plugin for WordPress</h1> -->
@@ -543,12 +553,11 @@ onMounted(() => {
                 <div class="badges__list grid-cols:1 grid-cols:2@sm grid-cols:4@md">
                     <div class="badges__item">
                         <div class="f:24">
-                            <!-- <i class="fa-solid fa-hand-holding-dollar fg:#29b077"></i> -->
-                            <i class="fa-solid fa-badge-dollar fg:#29b077"></i>
+                            <i class="fa-solid fa-hand-holding-dollar fg:#29b077"></i>
                         </div>
                         <div class="f:12 text:left">
-                            <strong>14-day Money</strong>
-                            <br> Back Guarantee
+                            <strong>Free</strong>
+                            Forever
                         </div>
                     </div>
 
@@ -590,7 +599,7 @@ onMounted(() => {
             </div>
 
             <!-- Sponsors -->
-            <div class="mx:auto my:40 flex flex:row align-items:center gap:10">
+            <!-- <div class="mx:auto my:40 flex flex:row align-items:center gap:10">
                 <a href="https://github.com/sponsors/suabahasa?o=esb" target="_blank" class="github-sponsor px:16 py:5 bg:#fafbfc bg:#f3f4f6:hover font:medium lh:20px r:6 b:1|solid|rgba(27,31,35,.15) ~background-color|.2s|cubic-bezier(0.3,0,0.5,1) text:none user-select:none">
                     <i class="fa-regular fa-heart mr:8 fg:#6a737d f:16 ~transform|.15s|cubic-bezier(0.2,0,0.13,2) scale(1) .github-sponsor:hover_{scale(1.1)}"></i>
                     <span class="f:14 fg:#24292e text-align:center ">Sponsor</span>
@@ -602,7 +611,7 @@ onMounted(() => {
                         <img class="h:28" src="https://storage.ko-fi.com/cdn/brandasset/kofi_button_dark.png" alt="Buy Me a Coffee at ko-fi.com" />
                     </a>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Snapshot -->
             <div class="mx:30@sm mx:40@md my:30 px:20">
@@ -837,7 +846,7 @@ onMounted(() => {
                 </p>
             </div>
 
-            <div class="flex justify-content:center my:30">
+            <!-- <div class="flex justify-content:center my:30">
                 <fieldset class="grid-cols:2 gap-x:4 rounded p:4 text:center f:14 font:semibold lh:1.6 box-shadow:rgb(255,255,255)|0px|0px|0px|0px|inset,rgb(229,231,235)|0px|0px|0px|1px|inset,rgba(0,0,0,0)|0px|0px|0px|0px">
                     <legend class="sr-only">Payment frequency</legend>
                     <label @click="selectedPricingDuration = 'year'" :class="[selectedPricingDuration === 'year' ? 'bg:blue-60 fg:white' : 'fg:gray-70 bg:blue-60/.1:hover']" class="cursor:pointer rounded px:10 py:4">
@@ -849,12 +858,13 @@ onMounted(() => {
                         <span>One-time</span>
                     </label>
                 </fieldset>
-            </div>
+            </div> -->
 
             <div class="pricing__wall w:full bg:white my:30 ">
 
-                <div :class="availablePricing.length % 3 === 0 ? 'grid-cols:3@md mx:5%@md' : 'grid-cols:2@md mx:15%@md'" class="pricing__container gap:20 grid-cols:1">
-                    <div v-for="price in availablePricing" :class="{ 'most-popular': price.isMostPopular, 'emphasized': price.isEmphasized }" class="pricing__item r:8 p:32 p:40@md">
+                <!-- <div :class="availablePricing.length % 3 === 0 ? 'grid-cols:3@md mx:5%@md' : 'grid-cols:2@md mx:15%@md'" class="pricing__container gap:20 grid-cols:1"> -->
+                <div class="pricing__container grid-cols:3@md mx:5%@md gap:20 grid-cols:1">
+                    <div v-for="price in availablePricing" :class="{ 'most-popular': price.isMostPopular, 'emphasized': price.isEmphasized }" class="pricing__item r:8 p:32 p:40@md  grid-col-start:2">
                         <div class="flex align-items:center justify-content:space-between gap-x:16">
                             <h3 class="pricing__item-title fg:gray-90 f:20 font:semibold lh:1.8">{{ price.title }}</h3>
                             <p v-if="price.isMostPopular" class="special-badge rounded fg:blue-80 bg:blue-10 px:10 py:4 f:12 font:semibold lh:1.65">
@@ -894,11 +904,11 @@ onMounted(() => {
                     <div class="badges__list grid-cols:1 grid-cols:2@sm grid-cols:4@md">
                         <div class="badges__item">
                             <div class="f:24">
-                                <i class="fa-solid fa-badge-dollar fg:#29b077"></i>
+                                <i class="fa-solid fa-hand-holding-dollar fg:#29b077"></i>
                             </div>
                             <div class="f:12 text:left">
-                                <strong>14-day Money</strong>
-                                <br> Back Guarantee
+                                <strong>Free</strong>
+                                Forever
                             </div>
                         </div>
 
