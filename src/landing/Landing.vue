@@ -3,10 +3,10 @@ import { ref, watch, computed, onBeforeMount, onMounted } from 'vue';
 import { Rive } from '@rive-app/canvas';
 
 /** @type {Rive} */
-let pupRive = null;
-const koFiHovered = ref(false);
+// let pupRive = null;
+// const koFiHovered = ref(false);
 
-const pupRiveCanvas = ref(null);
+// const pupRiveCanvas = ref(null);
 
 const isMobileMenuOpen = ref(false);
 
@@ -300,9 +300,9 @@ const availablePricing = computed(() => {
     return PRICING.filter(item => item.duration === selectedPricingDuration.value);
 });
 
-watch(koFiHovered, (value) => {
-    pupRive.stateMachineInputs('YeyMachine')[0].value = value;
-});
+// watch(koFiHovered, (value) => {
+//     pupRive.stateMachineInputs('YeyMachine')[0].value = value;
+// });
 
 watch(isMobileMenuOpen, (newState, oldState) => {
     if (newState) {
@@ -371,15 +371,15 @@ onMounted(() => {
         }
     }, 100);
 
-    pupRive = new Rive({
-        src: 'https://cdn.jsdelivr.net/gh/orgrosua/yabe-webfont-docs/public/assets/landing/pup.riv',
-        canvas: pupRiveCanvas.value,
-        autoplay: true,
-        stateMachines: 'YeyMachine',
-        onLoad: () => {
-            pupRive.resizeDrawingSurfaceToCanvas();
-        },
-    });
+    // pupRive = new Rive({
+    //     src: 'https://cdn.jsdelivr.net/gh/orgrosua/yabe-webfont-docs/public/assets/landing/pup.riv',
+    //     canvas: pupRiveCanvas.value,
+    //     autoplay: true,
+    //     stateMachines: 'YeyMachine',
+    //     onLoad: () => {
+    //         pupRive.resizeDrawingSurfaceToCanvas();
+    //     },
+    // });
 
     // Refresh the lightbox when the DOM is ready
     if (window.refreshFsLightbox) {
