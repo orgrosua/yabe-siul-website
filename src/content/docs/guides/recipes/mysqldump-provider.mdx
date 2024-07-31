@@ -1,0 +1,125 @@
+---
+title: Mysqldump Provider
+description: Scan the design payload by dumping the MySQL database. 
+i18nReady: false
+---
+
+:::caution
+Draft. This guide has not been reviewed and tested yet.
+:::
+
+In this guide, we will show you the simple steps to generate the final CSS file by dumping the MySQL database.
+
+:::danger
+This is a custom provider that will scan the design payload by dumping the MySQL database.
+
+**Use at your own risk.**
+:::
+
+:::danger
+Data will be transferred to your browser to be scanned by the compiler.
+
+**Use at your own risk.**
+:::
+
+
+## Step 1: Using a library to dump the MySQL database
+
+:::danger
+The PHP script used in this step is made by 3rd-party developers and is not maintained by Yabe Siul.
+
+**Use at your own risk.**
+:::
+
+
+Copy the code from [this link](https://raw.githubusercontent.com/ifsnop/mysqldump-php/master/src/Ifsnop/Mysqldump/Mysqldump.php) above and paste it into the `mysqldump.php` file in your theme's directory.
+
+## Step 2: Adding the Compiler's scanner
+
+Add the following code to your theme's `functions.php` file.
+
+To tell Yabe Siul's compiler to scan from dumping the MySQL database, you need to add a custom scanner to the compiler. This scanner will be responsible for dumping your MySQL database and returning the data to the compiler.
+
+```php
+<?php
+
+/**
+ * @source https://raw.githubusercontent.com/ifsnop/mysqldump-php/master/src/Ifsnop/Mysqldump/Mysqldump.php
+ */
+require_once(dirname(__FILE__) . '/mysqldump.php');
+
+/**
+ * @param array $providers The collection of providers that will be used to scan the design payload
+ * @return array
+ */
+function register_mysqldump_provider(array $providers): array
+{
+    $providers[] = [
+        'id' => 'mysqldump',
+        'name' => 'mysqldump Scanner',
+        'description' => 'Dump your MySQL database with mysqldump',
+        'callback' => 'scanner_mysqldump_provider', // The function that will be called to get the data
+        'enabled' => \Yabe\Siul\Utils\Config::get(sprintf(
+            'integration.%s.enabled',
+            'mysqldump' // The id of this custom provider
+        ), true),
+    ];
+
+    return $providers;
+}
+
+add_filter('f!yabe/siul/core/cache:compile.providers', 'register_mysqldump_provider');
+```
+
+## Step 3: Adding the Compiler's scanner callback
+
+Now that we have added the scanner, we need to define how the scanner will dump the MySQL database and return the data to the compiler.
+
+You can change the `include-tables` and `exclude-tables` to include or exclude tables from the dump.
+
+```php
+<?php
+
+function scanner_mysqldump_provider(): array
+{
+    if (!class_exists('\Ifsnop\Mysqldump\Mysqldump')) {
+        return [];
+    }
+
+    global $wpdb;
+
+    $dump_settings = [
+        'include-tables' => [
+            $wpdb->prefix . 'wp_posts', 
+            $wpdb->prefix . 'wp_postmeta'
+        ], // The tables that will be included in the dump
+        'exclude-tables' => [], // The tables that will be excluded in the dump
+        'skip-comments' => true,
+    ];
+
+    $dump = new \Ifsnop\Mysqldump\Mysqldump(
+        sprintf(
+            'mysql:host=%s;dbname=%s',
+            $wpdb->dbhost,
+            $wpdb->dbname
+        ),
+        $wpdb->dbuser,
+        $wpdb->dbpassword,
+        $dump_settings
+    );
+
+    // catch the php://stdout output
+    ob_start();
+    $dump->start('php://stdout');
+    $dumped = ob_get_clean();
+
+    return [
+        [
+            'name' => 'MySQL Dump',
+            'content' => $dumped,
+        ],
+    ];
+}
+```
+
+Now that we have added the scanner and the scanner callback, we can now [generate the final CSS file](../../common/production#generating-the-cached-css-file) from the MySQL database dump.
